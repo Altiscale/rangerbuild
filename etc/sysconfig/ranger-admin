@@ -1,0 +1,3 @@
+LINUX_USER=hdfs
+BIN_PATH=/usr/bin
+MOD_NAME=ranger-admin
