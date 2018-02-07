@@ -22,8 +22,8 @@ mkdir --mode=0755 -p ${ETC_DIR}
 # Add init.d scripts and sysconfig
 mkdir --mode=0755 -p ${INSTALL_DIR}/etc/rc.d/init.d
 cp ${WORKSPACE}/etc/init.d/* ${INSTALL_DIR}/etc/rc.d/init.d
-#mkdir --mode=0755 -p ${INSTALL_DIR}/etc/sysconfig
-#cp ${WORKSPACE}/etc/sysconfig/* ${INSTALL_DIR}/etc/sysconfig
+mkdir --mode=0755 -p ${INSTALL_DIR}/etc/sysconfig
+cp ${WORKSPACE}/etc/sysconfig/* ${INSTALL_DIR}/etc/sysconfig
 
 # Add executables
 mkdir --mode=0755 -p ${INSTALL_DIR}/usr/bin
