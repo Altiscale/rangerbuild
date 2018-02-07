@@ -1,3 +1,4 @@
-LINUX_USER=hdfs
 BIN_PATH=/usr/bin
+LINUX_USER=ranger-admin
 MOD_NAME=ranger-admin
+RANGER_USER=ranger-admin
