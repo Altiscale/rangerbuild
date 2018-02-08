@@ -1,0 +1,4 @@
+BIN_PATH=/usr/bin
+LINUX_USER=ranger-usersync
+MOD_NAME=ranger-usersync
+UNIX_USERSYNC_USER=ranger-usersync

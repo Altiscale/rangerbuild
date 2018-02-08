@@ -25,9 +25,10 @@ cp ${WORKSPACE}/etc/init.d/* ${INSTALL_DIR}/etc/rc.d/init.d
 mkdir --mode=0755 -p ${INSTALL_DIR}/etc/sysconfig
 cp ${WORKSPACE}/etc/sysconfig/* ${INSTALL_DIR}/etc/sysconfig
 
-# Add executables
+# Add Ranger executables
 mkdir --mode=0755 -p ${INSTALL_DIR}/usr/bin
 cp ${WORKSPACE}/usr/bin/ranger-admin ${INSTALL_DIR}/usr/bin/
+cp ${WORKSPACE}/usr/bin/ranger-usersync ${INSTALL_DIR}/usr/bin/
 
 cd ${INSTALL_DIR}
 
