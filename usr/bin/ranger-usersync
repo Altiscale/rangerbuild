@@ -27,7 +27,7 @@ action=`echo $action | tr '[:lower:]' '[:upper:]'`
 realScriptPath=`readlink -f $0`
 realScriptDir=`dirname $realScriptPath`
 cd $realScriptDir
-cdir=/etc/ranger/usersync
+cdir="${INSTALL_DIR}"
 
 for custom_env_script in `find ${cdir}/conf/ -name "ranger-usersync-env*"`; do
         if [ -f $custom_env_script ]; then
@@ -58,7 +58,7 @@ if [ "${action}" == "START" ]; then
   cd ${cdir}
   umask 0077
   if [ -z "${logdir}" ]; then 
-      logdir=/var/log/ranger/usersync
+      logdir="${LOG_DIR}"
   fi
   if [ -f "$pidf" ] ; then
     pid=`cat $pidf`
