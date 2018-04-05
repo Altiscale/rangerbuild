@@ -27,17 +27,14 @@ action=$1
 arg2=$2
 arg3=$3
 action=`echo $action | tr '[:lower:]' '[:upper:]'`
-realScriptPath='/opt/ranger-0.7.1/ranger-0.7.1-admin'
-realScriptDir=`dirname $realScriptPath`
-XAPOLICYMGR_DIR=`(cd $realScriptDir/..; pwd)`
-
-XAPOLICYMGR_EWS_DIR=${XAPOLICYMGR_DIR}/ews
+XAPOLICYMGR_EWS_DIR='/opt/ranger-0.7.1/ews'
 RANGER_JAAS_LIB_DIR="${XAPOLICYMGR_EWS_DIR}/ranger_jaas"
 RANGER_JAAS_CONF_DIR="${XAPOLICYMGR_EWS_DIR}/webapp/WEB-INF/classes/conf/ranger_jaas"
 JAVA_OPTS=" ${JAVA_OPTS} -XX:MaxPermSize=256m -Xmx1024m -Xms1024m "
+
 if [[ ${JAVA_OPTS} != *"-Duser.timezone"* ]] ;then  export JAVA_OPTS=" ${JAVA_OPTS} -Duser.timezone=UTC" ;fi
-if [ -f ${XAPOLICYMGR_DIR}/ews/webapp/WEB-INF/classes/conf/java_home.sh ]; then
-        . ${XAPOLICYMGR_DIR}/ews/webapp/WEB-INF/classes/conf/java_home.sh
+if [ -f ${XAPOLICYMGR_EWS_DIR}/webapp/WEB-INF/classes/conf/java_home.sh ]; then
+        . ${XAPOLICYMGR_EWS_DIR}/webapp/WEB-INF/classes/conf/java_home.sh
 fi
 
 if [ "$JAVA_HOME" != "" ]; then
@@ -56,7 +53,7 @@ then
 fi
 
 if [ ! -d "${RANGER_PID_DIR_PATH}" ]
-then  
+then
   mkdir -p  $RANGER_PID_DIR_PATH
   chmod 660 $RANGER_PID_DIR_PATH
 fi
