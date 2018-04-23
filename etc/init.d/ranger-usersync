@@ -69,6 +69,7 @@ case $1 in
             echo "Ranger Usersync Service is running [pid={$pid}]"
         else
             echo "Ranger Usersync Service is NOT running."
+            exit 1
         fi
    ;;
   *)
